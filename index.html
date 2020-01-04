@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="style1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style1.css">
 </head>
+
 <body>
 
 
   <div class="pos-f-t">
     <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-dark p-4">
-      
+      <div class="bg-dark p-4 navbar-style">
+
         <h5 class="text-white h4">Search your favorite artist:</h5>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" id ="searches"placeholder="Search Artist Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <input type="text" class="form-control"  id ="searches" placeholder="Search Artist Name" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
           </div>
         </div>
-        <span class="text-muted">Recent Searches</span>
+        <ul class="recentList">
+          <li>Recent search 1</li>
+          <li>Recent search 2</li>
+        </ul>
+
       </div>
     </div>
-    <nav class="navbar navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span> 
-         </button>
-         <p class="title">Track That Track</p>
-         
+    <nav class="navbar navbar-dark bg-dark navbar-style">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+        aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon hamburger-style"></span>
+      </button>
+      <p class="title">Track That Track</p>
+
     </nav>
   </div>
   <div class="card-group">
@@ -38,28 +48,36 @@
       <div class="card-body">
         <h5 class="card-title">Bio</h5>
         <p class="card-text">. . .</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
       </div>
     </div>
     <div class="card videoCard">
       <div class="card-body">
         <h5 class="card-title">Videos</h5>
         <p class="card-text">. . .</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
       </div>
     </div>
     <div class="card similarCard">
       <div class="card-body">
         <h5 class="card-title">Similiar artists</h5>
+        <p class="card-text">. . .</p>
+
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./index.js"></script> 
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./index.js"></script>
 </body>
+
 </html>
