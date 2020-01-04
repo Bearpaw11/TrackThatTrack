@@ -16,11 +16,11 @@
       <div class="bg-dark p-4">
       
         <h5 class="text-white h4">Search your favorite artist:</h5>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Search</span>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search Artist Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
           </div>
-          <input type="text" class="form-control searchbar-style" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <span class="text-muted">Recent Searches</span>
       </div>
@@ -32,6 +32,29 @@
          <p class="title">Track That Track</p>
          
     </nav>
+  </div>
+  <div class="card-group">
+    <div class="card bioCard">
+      <div class="card-body">
+        <h5 class="card-title">Bio</h5>
+        <p class="card-text">. . .</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card videoCard">
+      <div class="card-body">
+        <h5 class="card-title">Videos</h5>
+        <p class="card-text">. . .</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card similarCard">
+      <div class="card-body">
+        <h5 class="card-title">Similiar artists</h5>
+        <p class="card-text">. . .</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

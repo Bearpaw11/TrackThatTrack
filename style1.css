@@ -18,7 +18,15 @@ body {
     margin: -50;
 }
 
-.searchButton-style {
-    position: relative;
-    float: right;
+.searchBtn:hover {
+    background-color: skyblue;
+}
+
+.card {
+    background-color: #343a40;
+    color: skyblue;
+}
+
+.card-group {
+    margin-top: 15px;
 }
