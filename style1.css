@@ -1,32 +1,50 @@
 body {
-    box-sizing: border-box;
+    background-image: url(woodbackground.jpeg);
+}
+
+.navbar-style {
+  background-image: url(woodbackground.jpeg);
 }
 
 .title {
-    background: -webkit-linear-gradient(skyblue, white);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-    font-weight: bold;
-    padding-top: 5px;
 
+  font-family: 'Comfortaa', cursive;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 5px;
 }
 
 .searchbar-style {
-    width: 200px;
-    margin: -50;
+  width: 200px;
+  margin: -50;
+}
+
+.searchBtn {
+    background-color: white;
+    color: #5d3d23;
 }
 
 .searchBtn:hover {
-    background-color: skyblue;
+  background-color: #5d3d23 ;
 }
 
 .card {
-    background-color: #343a40;
-    color: skyblue;
+  background-color: #5d3d23;
+  color: white;
+  margin: 5px;
 }
 
 .card-group {
-    margin-top: 15px;
+  margin-top: 15px;
+}
+
+.hamburger-style {
+  color: white;
+  border: solid 2px;
+}
+
+.recentList {
+    color: white;
+    font-size: 18px;
 }
