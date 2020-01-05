@@ -29,7 +29,6 @@ $.ajax({
 })
 })
 
-
 //Storing info to localStorage and persisting
 
 $(".searchBtn").on("click", function() {
