@@ -39,10 +39,13 @@ $(".searchBtn").on("click", function() {
 
 $('input[type="text"]').each(function () { //For each input type that is text ...
     const getting = $(this).attr('id'); //This says that for each input of text, grab this input text's id
+
+   for (let i = 0; i < 3; i++) {
     const array = [];
     const letsGrab = JSON.parse(localStorage.getItem(getting)); 
-    array.push(letsGrab);
-   for (let i = 0; i < 3; i++) {
-    $(".recentList").append("<li>" + array[i] + "</li>");
+    if (!array.includes($("#searches").val())) {
+        array.push(letsGrab);
+        $(".recentList").append("<li>" + array[i] + "</li>");
+    }
    }
   });
