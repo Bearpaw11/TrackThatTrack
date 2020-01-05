@@ -14,7 +14,13 @@ $.ajax({
     $(".bioCard").empty();
     $(".similarCard").empty();
     $(".videoCard").empty();
-    $(".bioCard").append("<div>" + bio + "</div>");
+    $(".bioCard").append("<h4>" + "Bio " + "</h4>");
+    $(".videoCard").append("<h4>" + "Videos and Tags: " + "</h4>");
+    $(".similarCard").append("<h4>" + "Similar Artists: " + "</h4>");
+
+    for (let i = 0; i < 1; i++) {
+        $(".bioCard").append("<div>" + bio + "</div>");
+    }
     for (let i = 0; i < response.artist.similar.artist.length; i++){
         $(".similarCard").append("<div>" + response.artist.similar.artist[i].name + "</div>") 
         }
