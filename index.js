@@ -13,31 +13,18 @@ $.ajax({
     let bio = response.artist.bio.summary
     $(".bioCard").empty();
     $(".similarCard").empty();
+    $(".videoCard").empty();
     $(".bioCard").append("<div>" + bio + "</div>");
     for (let i = 0; i < response.artist.similar.artist.length; i++){
-        console.log(response.artist.similar.artist[i].name)
         $(".similarCard").append("<div>" + response.artist.similar.artist[i].name + "</div>") 
         }
-    for (let i=0; i <response.artist.tags.tag.length; i++){
-        console.log(response.artist.tags.tag[i].name);
+    for (let i = 0; i < 6; i++){
+        const capitals = response.artist.tags.tag[i].name;
+        const caps = capitals.charAt(0).toUpperCase() + capitals.slice(1);
+       $(".videoCard").append("<div>" + caps + "</div>");
     }
-    console.log(response.artist.bio.summary);
 })
 })
-
-// //YouTube AJAX Call
-// const ytKey = "AIzaSyAieSOnGekvLnel6Hjar6pPrYe_mA-eOHo";
-// const ytQuery = "https://www.googleapis.com/youtube/v3&key=" + ytKey;
-
-// $.ajax({
-//     url: ytQuery,
-//     method: "GET"
-// }).then(function(response) {
-//     $(".videoCard").append("<div>" + response.list + "</div>");
-//     for (let i = 0; i < 4; i++){ //Putting four so that we just get 3 YT videos
-//         $(".videoCard").append("<div>" + response.video[i].name + "</div>");
-//     }})})
-
 })
 
 //Storing info to localStorage and persisting
@@ -52,6 +39,10 @@ $(".searchBtn").on("click", function() {
 
 $('input[type="text"]').each(function () { //For each input type that is text ...
     const getting = $(this).attr('id'); //This says that for each input of text, grab this input text's id
-    const letsGrab = JSON.parse(localStorage.getItem(getting) || []); //Put that id in localStorage to grab the value
-    document.getElementById(getting).value = letsGrab; //This says empty value in id (getting) is replaced by what's in letsGrab
+    const array = [];
+    const letsGrab = JSON.parse(localStorage.getItem(getting)); 
+    array.push(letsGrab);
+   for (let i = 0; i < 3; i++) {
+    $(".recentList").append("<li>" + array[i] + "</li>");
+   }
   });
