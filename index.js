@@ -1,4 +1,6 @@
 const lastFmKey = "d3085bfaa5ede08f67f9926f412ffa08";
+const bandsInTownKey = "a9c5d877eaa4fd5368776229d482016f";
+
 $(document).ready(function() {
 
 $(".searchBtn").on("click", function(event) {
@@ -10,7 +12,7 @@ $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response) {
-    let bio = response.artist.bio.summary
+    let bio = response.artist.bio.summary;
     $(".bioCard").empty();
     $(".similarCard").empty();
     $(".videoCard").empty();
@@ -31,8 +33,6 @@ $.ajax({
     }
 })
 })
-})
-
 //Storing info to localStorage and persisting
 
 $(".searchBtn").on("click", function() {
@@ -43,15 +43,19 @@ $(".searchBtn").on("click", function() {
     });
 });
 
-$('input[type="text"]').each(function () { //For each input type that is text ...
-    const getting = $(this).attr('id'); //This says that for each input of text, grab this input text's id
+$('input[type="text"]').each(function () { 
+    const getting = $(this).attr('id'); 
 
    for (let i = 0; i < 3; i++) {
     const array = [];
     const letsGrab = JSON.parse(localStorage.getItem(getting)); 
     if (!array.includes($("#searches").val())) {
         array.push(letsGrab);
-        $(".recentList").append("<li>" + array[i] + "</li>");
+        $("#first").append(array[i]);
+        $("#second").append(array[i]);
     }
    }
   });
+}) //End of search button functionality + document.ready
+
+
