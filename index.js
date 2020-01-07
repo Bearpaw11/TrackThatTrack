@@ -26,15 +26,25 @@ $(".searchBtn").on("click", function(event) {
     }
 })
 const bitURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=a9c5d877eaa4fd5368776229d482016f";
+const eventURL = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_id=a9c5d877eaa4fd5368776229d482016f";
 
-$.ajax({
+$.ajax({ //Only for getting the photo
     url: bitURL,
     method: "GET"
 }).then(function(response) {
     $(".videoCard").append("<div>" + "<img src='" + response.image_url + "'>" + "</div>");
-    $(".bioCard").append("<div>" + response.artist.event + "</div>");
 })
 
+$.ajax({ //Only for getting events
+    url: eventURL,
+    method: "GET"
+}).then(function(response) {
+    $(".bioCard").append("<div>Next 10 Upcoming Events: " + "</div>");
+    for (let i = 0; i < 9; i++) {
+    $(".bioCard").append("<li>" + response[i].datetime + ", " + response[i].venue.name + ", " + response[i].venue.city + "</li>");
+    }
+    console.log(response);
+})
 })
 })
 
