@@ -35,6 +35,16 @@ $.ajax({ //Only for getting the photo
     $(".videoCard").append("<div>" + "<img src='" + response.image_url + "'>" + "</div>");
 })
 
+$.ajax({ //Only for getting the BIN link. Link opens in New window
+    url: bitURL,
+    method: "GET"
+}).then(function(response) {
+    console.log(response.url)
+    $(".similarCard").append("<a" + " href='" + response.url + "' " + "target=" + "_blank" + "'" +">LINK TO BANDS IN TOWN PAGE</a>")
+
+
+})
+
 $.ajax({ //Only for getting events
     url: eventURL,
     method: "GET"
