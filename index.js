@@ -1,4 +1,5 @@
 const lastFmKey = "d3085bfaa5ede08f67f9926f412ffa08";
+const bitKey = "a9c5d877eaa4fd5368776229d482016f";
 $(document).ready(function() {
 
 $(".searchBtn").on("click", function(event) {
@@ -6,26 +7,34 @@ $(".searchBtn").on("click", function(event) {
     const artist = $("#searches").val();
     const queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
 
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+        let bio = response.artist.bio.summary;
+        $(".bioCard").empty();
+        $(".similarCard").empty();
+        $(".videoCard").empty();
+        $(".bioCard").append("<div>" + bio + "</div>");
+        for (let i = 0; i < response.artist.similar.artist.length; i++){
+            $(".similarCard").append("<div>" + response.artist.similar.artist[i].name + "</div>") 
+        }
+        for (let i=0; i < 6; i++){
+            let capitals = response.artist.tags.tag[i].name;
+            const caps = capitals.charAt(0).toUpperCase() + capitals.slice(1);
+            $(".videoCard").append("<div>" + caps + "</div>");
+    }
+})
+const bitURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=a9c5d877eaa4fd5368776229d482016f";
+
 $.ajax({
-    url: queryURL,
+    url: bitURL,
     method: "GET"
 }).then(function(response) {
-    let bio = response.artist.bio.summary;
-    $(".bioCard").empty();
-    $(".similarCard").empty();
-    $(".videoCard").empty();
-    $(".bioCard").append("<div>" + bio + "</div>");
-    for (let i = 0; i < response.artist.similar.artist.length; i++){
-        $(".similarCard").append("<div>" + response.artist.similar.artist[i].name + "</div>") 
-        }
-    for (let i=0; i < 6; i++){
-        let capitals = response.artist.tags.tag[i].name;
-        console.log(response.artist.tags.tag[i].name);
-        const caps = capitals.charAt(0).toUpperCase() + capitals.slice(1);
-        $(".videoCard").append("<div>" + caps + "</div>");
-    }
-    console.log(response.artist.bio.summary);
+    $(".videoCard").append("<div>" + "<img src='" + response.image_url + "'>" + "</div>");
+    $(".bioCard").append("<div>" + response.artist.event + "</div>");
 })
+
 })
 })
 
