@@ -63,3 +63,11 @@ height: auto;
 opacity: 0.5;
 filter: alpha(opacity=50);
 }
+
+.artistPic {
+width: 100%;
+height: auto;
+max-width: 400px;
+padding: 30px;
+margin: 20px;
+}
