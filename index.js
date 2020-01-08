@@ -6,7 +6,7 @@ $(".searchBtn").on("click", function(event) {
     event.preventDefault();
     const artist = $("#searches").val();
     const queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
-
+    //LastFM Call
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -16,7 +16,7 @@ $(".searchBtn").on("click", function(event) {
         $(".bioCard").empty();
         $(".similarCard").empty();
         $(".videoCard").empty();
-        $(".bioCard").append("<div>" + bio + "</div>");
+        $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
         for (let i = 0; i < response.artist.similar.artist.length; i++){
             $(".similarCard").append("<div>" + response.artist.similar.artist[i].name + "</div>") 
         }
@@ -29,11 +29,12 @@ $(".searchBtn").on("click", function(event) {
 const bitURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=a9c5d877eaa4fd5368776229d482016f";
 const eventURL = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_id=a9c5d877eaa4fd5368776229d482016f";
 
-$.ajax({ //Only for getting the photo
+//BandsInTown Call
+$.ajax({ //PHOTO ONLY
     url: bitURL,
     method: "GET"
 }).then(function(response) {
-    $(".videoCard").append("<div>" + "<img src='" + response.image_url + "'>" + "</div>");
+    $(".videoCard").append("<div>" + "<img class='artistPic' src='" + response.image_url + "'>" + "</div>");
 })
 
 $.ajax({ //Only for getting the BIN link. Link opens in New window
@@ -50,11 +51,11 @@ $.ajax({ //Only for getting events
     url: eventURL,
     method: "GET"
 }).then(function(response) {
-    $(".bioCard").append("<div>Next 10 Upcoming Events: " + "</div>");
-    for (let i = 0; i < 9; i++) {
-    $(".bioCard").append("<li>" + response[i].datetime + ", " + response[i].venue.name + ", " + response[i].venue.city + "</li>");
+    $(".bioCard").append("<div>" + "<p>Upcoming Events: " + "</p>" + "</div>");
+    for (let i = 0; i < 10; i++) {
+        $(".bioCard").append("<a" + " href='" + response[i].url + "'" + "target=" + "_blank" + "" + '>' + response[i].datetime + ", " + response[i].venue.name + ", " + response[i].venue.city + "</a>");
     }
-    console.log(response);
+    
 })
 })
 })
