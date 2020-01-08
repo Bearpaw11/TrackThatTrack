@@ -11,7 +11,6 @@ $(".searchBtn").on("click", function(event) {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log(response)
         let bio = response.artist.bio.summary;
         $(".bioCard").empty();
         $(".similarCard").empty();
@@ -37,15 +36,15 @@ $.ajax({ //PHOTO ONLY
     $(".videoCard").append("<div>" + "<img class='artistPic' src='" + response.image_url + "'>" + "</div>");
 })
 
-$.ajax({ //Only for getting the BIN link. Link opens in New window
-    url: bitURL,
-    method: "GET"
-}).then(function(response) {
-    console.log(response.url)
-    $(".similarCard").append("<a" + " href='" + response.url + "' " + "target=" + "_blank" + "'" +">LINK TO BANDS IN TOWN PAGE</a>")
+// COMMENTED OUT FROM MERGING:
+// $.ajax({ //Only for getting the BIN link. Link opens in New window
+//     url: bitURL,
+//     method: "GET"
+// }).then(function(response) {
+//     console.log(response.url)
+//     $(".similarCard").append("<a" + " href='" + response.url + "' " + "target=" + "_blank" + "'" +">LINK TO BANDS IN TOWN PAGE</a>")
 
-
-})
+// })
 
 $.ajax({ //Only for getting events
     url: eventURL,
