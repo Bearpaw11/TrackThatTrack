@@ -11,11 +11,14 @@ $(".searchBtn").on("click", function(event) {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
+        console.log(response);
         let bio = response.artist.bio.summary;
         $(".bioCard").empty();
         $(".similarCard").empty();
         $(".videoCard").empty();
+        $(".artistName").empty();
         $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
+        $(".artistName").append(response.artist.name);
         for (let i = 0; i < response.artist.similar.artist.length; i++){
             $(".similarCard").append("<div>" + response.artist.similar.artist[i].name + "</div>") 
         }
@@ -24,6 +27,7 @@ $(".searchBtn").on("click", function(event) {
             const caps = capitals.charAt(0).toUpperCase() + capitals.slice(1);
             $(".videoCard").append("<div>" + caps + "</div>");
     }
+
 })
 const bitURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=a9c5d877eaa4fd5368776229d482016f";
 const eventURL = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_id=a9c5d877eaa4fd5368776229d482016f";
@@ -42,7 +46,7 @@ $.ajax({ //Only for getting the BIN link. Link opens in New window
 }).then(function(response) {
     console.log(response.url)
     $(".similarCard").append("<a" + " href='" + response.url + "' " + "target=" + "_blank" + "'" +">LINK TO BANDS IN TOWN PAGE</a>")
- })
+})
 
 $.ajax({ //Only for getting events
     url: eventURL,
