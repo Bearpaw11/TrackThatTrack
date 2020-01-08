@@ -1,7 +1,6 @@
 const lastFmKey = "d3085bfaa5ede08f67f9926f412ffa08";
 const bitKey = "a9c5d877eaa4fd5368776229d482016f";
 $(document).ready(function() {
-
 $(".searchBtn").on("click", function(event) {
     event.preventDefault();
     const artist = $("#searches").val();
@@ -27,7 +26,6 @@ $(".searchBtn").on("click", function(event) {
 })
 const bitURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=a9c5d877eaa4fd5368776229d482016f";
 const eventURL = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_id=a9c5d877eaa4fd5368776229d482016f";
-
 //BandsInTown Call
 $.ajax({ //PHOTO ONLY
     url: bitURL,
@@ -43,13 +41,10 @@ $.ajax({ //EVENTS ONLY
     for (let i = 0; i < 10; i++) {
         $(".bioCard").append("<a" + " href='" + response[i].url + "'" + "target=" + "_blank" + "" + '>' + response[i].datetime + ", " + response[i].venue.name + ", " + response[i].venue.city + "</a>");
     }
-    
 })
 })
 })
-
 //Storing info to localStorage and persisting
-
 $(".searchBtn").on("click", function() {
     $('input[type="text"]').each(function () { 
         const id = $(this).attr('id');
@@ -57,7 +52,6 @@ $(".searchBtn").on("click", function() {
         localStorage.setItem(id, JSON.stringify(value));
     });
 });
-
 $('input[type="text"]').each(function () { 
     let searchArray = [];
     const getting = $(this).attr('id'); 
