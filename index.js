@@ -11,7 +11,6 @@ $(".searchBtn").on("click", function(event) {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log(response);
         let bio = response.artist.bio.summary;
         $(".bioCard").empty();
         $(".similarCard").empty();
@@ -27,8 +26,7 @@ $(".searchBtn").on("click", function(event) {
             const caps = capitals.charAt(0).toUpperCase() + capitals.slice(1);
             $(".videoCard").append("<div>" + caps + "</div>");
     }
-
-})
+    })
 const bitURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=a9c5d877eaa4fd5368776229d482016f";
 const eventURL = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_id=a9c5d877eaa4fd5368776229d482016f";
 
@@ -44,7 +42,6 @@ $.ajax({ //Only for getting the BIN link. Link opens in New window
     url: bitURL,
     method: "GET"
 }).then(function(response) {
-    console.log(response.url)
     $(".similarCard").append("<a" + " href='" + response.url + "' " + "target=" + "_blank" + "'" +">LINK TO BANDS IN TOWN PAGE</a>")
 })
 
@@ -58,9 +55,11 @@ $.ajax({ //Only for getting events
     }
     
 })
-})
-})
-
+//If statement that adds modal
+if ($("#searches").val() == "") {
+        return $(".modal").text("ERROR - you must enter in an artist name.").modal();
+}
+})})
 //Storing info to localStorage and persisting
 
 $(".searchBtn").on("click", function() {
@@ -82,3 +81,5 @@ $('input[type="text"]').each(function () {
     $(".mostRecent").text(searchArray[i]);
     }
   });
+
+  
