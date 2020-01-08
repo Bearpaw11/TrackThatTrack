@@ -11,6 +11,7 @@ $(".searchBtn").on("click", function(event) {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
+        console.log(response)
         let bio = response.artist.bio.summary;
         $(".bioCard").empty();
         $(".similarCard").empty();
