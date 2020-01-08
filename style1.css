@@ -34,7 +34,7 @@ margin: -50;
 background-color: #5d3d23 ;
 }
 .card {
-background-color: #5d3d23;
+background-color: #3f2917;
 color: white;
 margin: 5px;
 }
@@ -48,7 +48,7 @@ border: solid 2px;
 .recentList {
   color: white;
   font-size: 18px;
-  background-color: #5d3d23e1;
+  background-color: #3f2917c0;
   border-radius: 25px;
 }
 .tttPic {
@@ -85,4 +85,20 @@ margin: 20px;
 
 .btn:hover, .btn:active, .btn:link, .btn:focus {
   text-decoration: none;
+}
+
+.recordImage {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.searchInstructions {
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px;
+  position: relative;
+  z-index: 10;
 }
