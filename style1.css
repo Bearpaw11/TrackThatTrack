@@ -71,3 +71,18 @@ max-width: 400px;
 padding: 30px;
 margin: 20px;
 }
+
+.card-title {
+  font-family: 'Comfortaa', cursive;
+  color: white;
+  text-decoration: none;
+}
+
+.card-title:hover {
+  text-decoration: none;
+  color: #0f0b06;
+}
+
+.btn:hover, .btn:active, .btn:link, .btn:focus {
+  text-decoration: none;
+}
