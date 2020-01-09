@@ -18,7 +18,7 @@ $(".searchBtn").on("click", function(event) {
         $(".artistName").empty();
         $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
         $(".artistName").append(response.artist.name);
-        $(".artistName").prepend("<img class='hb' src='hamburgerIconSm.JPG'>")
+        $(".artistName").prepend("<img class='hb' src='hamburgerIconSmb.JPG'>")
         for (let i = 0; i < response.artist.similar.artist.length; i++){
             $(".similarCard").append("<div>" + response.artist.similar.artist[i].name + "</div>") 
         }
