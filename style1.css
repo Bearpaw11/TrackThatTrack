@@ -6,6 +6,7 @@ body {
 }
 .navbar-style {
 background-image: url(woodbackground.jpeg);
+background-color: #3f2917;
 }
 .title {
 font-family: 'Comfortaa', cursive;
@@ -60,8 +61,8 @@ top: 200px;
 width: 100%;
 max-width: 1000px;
 height: auto;
-opacity: 0.5;
-filter: alpha(opacity=50);
+opacity: 0.3;
+filter: alpha(opacity=30);
 }
 
 .artistPic {
@@ -75,13 +76,14 @@ margin: 20px;
 .card-title {
   font-family: 'Comfortaa', cursive;
   color: white;
-  text-decoration: none;
+  padding-top: 5px;
 }
 
 .card-title:hover {
   text-decoration: none;
-  color: #0f0b06;
+  color: #b38f63;
 }
+
 
 .btn:hover, .btn:active, .btn:link, .btn:focus {
   text-decoration: none;
@@ -92,7 +94,8 @@ margin: 20px;
   width: 100%;
   height: auto;
   max-width: 100px;
-  opacity: 0.5;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
   z-index: 0;
 }
 
@@ -106,4 +109,13 @@ margin: 20px;
 .modal {
   height: 100px;
   width: 100px;
+}
+
+.card-header:hover, .card-header:active, .card-header:focus {
+  background-image: linear-gradient(to right, #3f2917, #1d150d);
+  color: #b38f63;
+}
+
+.cardHeader {
+  padding: 5px;
 }
