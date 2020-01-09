@@ -1,50 +1,121 @@
-body {
-    background-image: url(woodbackground.jpeg);
+* {
+  font-family: 'Raleway', sans-serif;
 }
-
-.navbar-style {
+body {
   background-image: url(woodbackground.jpeg);
 }
-
+.navbar-style {
+background-image: url(woodbackground.jpeg);
+background-color: #3f2917;
+}
 .title {
-
-  font-family: 'Comfortaa', cursive;
-  color: white;
-  font-size: 30px;
+font-family: 'Comfortaa', cursive;
+color: white;
+font-size: 30px;
+font-weight: bold;
+padding-top: 5px;
+}
+.searchbar-style {
+width: 200px;
+margin: -50;
+}
+.searchTitle {
   font-weight: bold;
-  padding-top: 5px;
 }
 
-.searchbar-style {
-  width: 200px;
-  margin: -50;
+.searchTitle {
+    font-weight: bold;
 }
 
 .searchBtn {
-    background-color: white;
-    color: #5d3d23;
+  background-color: white;
+  color: #5d3d23;
 }
-
 .searchBtn:hover {
-  background-color: #5d3d23 ;
+background-color: #5d3d23 ;
 }
-
 .card {
-  background-color: #5d3d23;
-  color: white;
-  margin: 5px;
+background-color: #3f2917;
+color: white;
+margin: 5px;
 }
-
 .card-group {
-  margin-top: 15px;
+margin-top: 15px;
 }
-
 .hamburger-style {
+color: white;
+border: solid 2px;
+}
+.recentList {
   color: white;
-  border: solid 2px;
+  font-size: 18px;
+  background-color: #3f2917c0;
+  border-radius: 25px;
+}
+.tttPic {
+position: absolute;
+z-index: -1;
+margin-right:auto;
+margin-left: auto;
+top: 200px;
+width: 100%;
+max-width: 1000px;
+height: auto;
+opacity: 0.3;
+filter: alpha(opacity=30);
 }
 
-.recentList {
-    color: white;
-    font-size: 18px;
+.artistPic {
+width: 100%;
+height: auto;
+max-width: 400px;
+padding: 30px;
+margin: 20px;
+}
+
+.card-title {
+  font-family: 'Comfortaa', cursive;
+  color: white;
+  padding-top: 5px;
+}
+
+.card-title:hover {
+  text-decoration: none;
+  color: #b38f63;
+}
+
+
+.btn:hover, .btn:active, .btn:link, .btn:focus {
+  text-decoration: none;
+}
+
+.recordImage {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  z-index: 0;
+}
+
+.searchInstructions {
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px;
+  position: relative;
+  z-index: 10;
+}
+
+.modal {
+  height: 100px;
+  width: 100px;
+}
+
+.card-header:hover, .card-header:active, .card-header:focus {
+  background-image: linear-gradient(to right, #3f2917, #1d150d);
+  color: #b38f63;
+}
+
+.cardHeader {
+  padding: 5px;
 }
