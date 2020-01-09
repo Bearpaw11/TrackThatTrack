@@ -113,6 +113,8 @@ margin: 20px;
 
 .card-header {
   background-color: #000000;
+  border-bottom: 1px solid;
+  border-color: #b1301a;
 }
 
 .card-header:hover, .card-header:active, .card-header:focus {
