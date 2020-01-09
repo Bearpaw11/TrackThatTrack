@@ -1,8 +1,10 @@
 const lastFmKey = "d3085bfaa5ede08f67f9926f412ffa08";
 const bitKey = "a9c5d877eaa4fd5368776229d482016f";
+let searchArray = []; 
+
 $(document).ready(function() {
 
-$(".searchBtn").on("click", function(event) {
+$(".searchBtn").on("click", function(event) { //Search Button Click Function Starts Here
     event.preventDefault();
     const artist = $("#searches").val();
     const queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
@@ -27,7 +29,8 @@ $(".searchBtn").on("click", function(event) {
             const caps = capitals.charAt(0).toUpperCase() + capitals.slice(1);
             $(".videoCard").append("<div>" + caps + "</div>");
     }
-    })
+    }) //END OF LASTFM CALL
+
 const bitURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=a9c5d877eaa4fd5368776229d482016f";
 const eventURL = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_id=a9c5d877eaa4fd5368776229d482016f";
 
@@ -46,7 +49,7 @@ $.ajax({ //Only for getting the BIN link. Link opens in New window
     $(".similarCard").append("<a" + " href='" + response.url + "' " + "target=" + "_blank" + "'" +">LINK TO BANDS IN TOWN PAGE</a>")
 })
 
-$.ajax({ //Only for getting events
+$.ajax({ //EVENTS ONLY
     url: eventURL,
     method: "GET"
 }).then(function(response) {
@@ -60,27 +63,29 @@ $.ajax({ //Only for getting events
 if ($("#searches").val() == "") {
         return $(".modal").text("ERROR - you must enter in an artist name.").modal();
 }
-})})
-//Storing info to localStorage and persisting
 
+})})
+
+//Storing info to localStorage and persisting 
 $(".searchBtn").on("click", function() {
-    $('input[type="text"]').each(function () { 
-        const id = $(this).attr('id');
-        const value = $(this).val();
-        localStorage.setItem(id, JSON.stringify(value));
-    });
+        const value = $("#searches").val();
+        if (!searchArray.includes(value)) { //This prevents multiples of the same artist
+            searchArray.push(value);
+            localStorage.setItem('search', JSON.stringify(searchArray)); 
+        } 
+
+        const liMaker = $("<li>");
+
+        for (let i = 0; i < 3; i++) {
+            if (searchArray.length > 3) {
+                break;
+            }
+            liMaker.addClass(".mostRecent");
+            liMaker.text(JSON.parse(localStorage.getItem('search'))[i]);
+            $(".mostRecent").append(liMaker);
+            
+    }
 });
 
-$('input[type="text"]').each(function () { 
-    let searchArray = [];
-    const getting = $(this).attr('id'); 
-    const letsGrab = JSON.parse(localStorage.getItem(getting)); 
-    searchArray.push(letsGrab);
-    for (let i = 0; i < 3; i++) {
-    $(".mostRecent").append("<li>");
-    $("<li>").addClass(".mostRecent");
-    $(".mostRecent").text(searchArray[i]);
-    }
-  });
 
   
