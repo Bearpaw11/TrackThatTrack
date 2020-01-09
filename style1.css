@@ -44,8 +44,14 @@ margin-top: 15px;
 }
 .hamburger-style {
 color: white;
-border: solid 2px;
+/* border: solid 2px; */
+background-image: url("searchIcon.svg");
 }
+
+.hamburger-style:hover, .hamburger-style:focus, .hamburger-style:link, .hamburger-style:active {
+  text-decoration: none;
+}
+
 .recentList {
   color: white;
   font-size: 18px;
@@ -124,4 +130,13 @@ margin: 20px;
 
 .cardHeader {
   padding: 5px;
+}
+
+.searchIcon {
+  width: 30px;
+  height: auto;
+}
+
+.toggle-style {
+  color: transparent;
 }
