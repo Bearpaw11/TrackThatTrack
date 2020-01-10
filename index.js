@@ -99,9 +99,9 @@ function artistCall(artist) {
                 url: eventURL,
                 method: "GET"
             }).then(function(response) {
-                $(".bioCard").append("<div>" + "<p>Upcoming Events: " + "</p>" + "</div>");
+                $(".eventCard").append("<div>" + "<p>Upcoming Events: " + "</p>" + "</div>");
                 for (let i = 0; i < 10; i++) {
-                    $(".bioCard").append("<a" + " href='" + response[i].url + "'" + "target=" + "_blank" + "" + '>' + response[i].datetime + ", " + response[i].venue.name + ", " + response[i].venue.city + "</a>");
+                    $(".eventCard").append("<a" + " href='" + response[i].url + "'" + "target=" + "_blank" + "" + '>' + response[i].datetime + ", " + response[i].venue.name + ", " + response[i].venue.city + "</a>");
                 }
 
             })
