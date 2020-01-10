@@ -3,6 +3,7 @@ const bitKey = "a9c5d877eaa4fd5368776229d482016f";
 let searchArray = []; 
 
 $(document).ready(function() {
+    saverGetter(); 
 
         $(".searchBtn").on("click", function(event) {
             event.preventDefault();
@@ -10,46 +11,47 @@ $(document).ready(function() {
                 return $(".modal").text("ERROR - you must enter in an artist name.").modal();
             }
             const artist = $("#searches").val();
-
+            saverGetter(artist);
+            liCheck(); //Produce modal with error if empty string
             //LastFM Call
             artistCall(artist)
             
         })
-    //Storing info to localStorage and persisting
 
-//Storing info to localStorage and persisting 
-$(".searchBtn").on("click", function() {
-    $('input[type="text"]').each(function() {
-        const id = $(this).attr('id');
-        const value = $(this).val();
-        localStorage.setItem(id, JSON.stringify(value));
-        
-    });
-    $("#searches").val("");
-});
-
-$('input[type="text"]').each(function() {
-    let searchArray = [];
-    const getting = $(this).attr('id');
-    const letsGrab = JSON.parse(localStorage.getItem(getting));
-    searchArray.push(letsGrab);
-    for (let i = 0; i < 3; i++) {
-        $(".mostRecent").append("<li>");
-        $("<li>").addClass(".mostRecent");
-        $(".mostRecent").text(searchArray[i]);
-    }
-});
 
 })
+const liMaker = $("<li>"); //Making the li GLOBALLY
+function saverGetter() {
+    const value = $("#searches").val(); //Grab the val of our search input
+     if (!searchArray.includes(value) && value != "") { //Prevents multiples of same artist & prevents displaying empty <li>
+         searchArray.push(value);  //Push the value as long as it meets these requirements
+         localStorage.setItem('search', JSON.stringify(searchArray));  //Save the pushed values into the array and save THAT into localStorage
+     }    another();
+     }
+function liCheck () { //This function says that if there's an empty string, it'll produce a modal w/error
+    if ($("#searches").val() == "") {
+        return $(".modal").text("ERROR - you must enter in an artist name.").modal();
+    }
+}
+function another() {
+             $(".mostRecent").empty(); //When we append, we add things to the page. So we need to empty things out BEFORE we do all of that since we're adding more things.
+             for (let i = 0; i < 3; i++) { 
+                 if (i > searchArray.length - 1) { //Ensures we don't have empty list items. Gets last position in array, and when you get PAST that last position...
+                     break; //Break!
+                 }
+                 $(".recentList").append(liMaker); //Append to recentList
+                 liMaker.addClass(".mostRecent"); //Add the class of mostRecent EVERYTIME to liMaker (<li>)
+                 liMaker.text(JSON.parse(localStorage.getItem('search'))[i]); //Add the text of the saved localStorage array to liMaker
+                 
+}}
+
 $(".similarCard").on("click", ".sim", function() {
-    console.log(this)
     let artist = $(this).text();
-    console.log(artist)
     artistCall(artist)
 });
 
 function artistCall(artist) {
-    const queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
+    const queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
 
         $.ajax({
             url: queryURL,
