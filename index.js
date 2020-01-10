@@ -51,7 +51,7 @@ $(".similarCard").on("click", ".sim", function() {
 });
 
 function artistCall(artist) {
-    const queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
+    const queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
 
         $.ajax({
             url: queryURL,
