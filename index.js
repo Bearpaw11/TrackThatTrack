@@ -4,7 +4,6 @@ let searchArray = JSON.parse(localStorage.getItem('search')) || [];  //No need f
 
 $(document).ready(function() {
     saverGetter(); 
-
 $(".searchBtn").on("click", function(event) {
     event.preventDefault();
     if ($("#searches").val() == "") {
