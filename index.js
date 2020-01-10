@@ -7,7 +7,7 @@ $(document).ready(function() {
 $(".searchBtn").on("click", function(event) { //Search Button Click Function Starts Here
     event.preventDefault();
     const artist = $("#searches").val();
-    const queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
+    const queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
     //LastFM Call
     $.ajax({
         url: queryURL,
