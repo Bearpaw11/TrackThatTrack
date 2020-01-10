@@ -35,7 +35,7 @@ margin: -50;
 background-color: #5d3d23 ;
 }
 .card {
-background-color: #3f2917;
+background-color: #000000b7;
 color: white;
 margin: 5px;
 }
@@ -44,12 +44,18 @@ margin-top: 15px;
 }
 .hamburger-style {
 color: white;
-border: solid 2px;
+/* border: solid 2px; */
+background-image: url("searchIcon.svg");
 }
+
+.hamburger-style:hover, .hamburger-style:focus, .hamburger-style:link, .hamburger-style:active {
+  text-decoration: none;
+}
+
 .recentList {
   color: white;
   font-size: 18px;
-  background-color: #3f2917c0;
+  background-color: #000000b7;
   border-radius: 25px;
 }
 .tttPic {
@@ -73,7 +79,7 @@ padding: 30px;
 margin: 20px;
 }
 
-.card-title {
+.card-title, .artistName {
   font-family: 'Comfortaa', cursive;
   color: white;
   padding-top: 5px;
@@ -111,11 +117,26 @@ margin: 20px;
   width: 100px;
 }
 
+.card-header {
+  background-color: #000000;
+  border-bottom: 1px solid;
+  border-color: #b1301a;
+}
+
 .card-header:hover, .card-header:active, .card-header:focus {
-  background-image: linear-gradient(to right, #3f2917, #1d150d);
+  background-image: linear-gradient(to right, #000000, #1d150d, #b1301a);
   color: #b38f63;
 }
 
 .cardHeader {
   padding: 5px;
+}
+
+.searchIcon {
+  width: 30px;
+  height: auto;
+}
+
+.toggle-style {
+  color: transparent;
 }
