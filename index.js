@@ -25,7 +25,7 @@ $(".searchBtn").on("click", function() {
         localStorage.setItem(id, JSON.stringify(value));
         
     });
-    $("#searches").val("");
+    
 });
 
 $('input[type="text"]').each(function() {
@@ -49,7 +49,7 @@ $(".similarCard").on("click", ".sim", function() {
 });
 
 function artistCall(artist) {
-    const queryURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
+    const queryURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=" + lastFmKey + "&format=json";
 
         $.ajax({
             url: queryURL,
@@ -63,6 +63,8 @@ function artistCall(artist) {
             $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
             $(".artistName").append(response.artist.name);
             $(".artistName").prepend("<img class='hb' src='hamburgerIconSm.JPG'>")
+            $(".similarCard").append("<div class=" + "'directions'>Click on an Artisit to get information</div>")
+            $(".similarCard").append("<br>")
             for (let i = 0; i < response.artist.similar.artist.length; i++) {
                 $(".similarCard").append("<div class=" + "'sim'>" + response.artist.similar.artist[i].name + "</div>")
             }
