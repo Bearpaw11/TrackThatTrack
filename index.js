@@ -1,59 +1,48 @@
 const lastFmKey = "d3085bfaa5ede08f67f9926f412ffa08";
 const bitKey = "a9c5d877eaa4fd5368776229d482016f";
-let searchArray = []; 
+let searchArray = JSON.parse(localStorage.getItem('search')) || [];  //No need for i because we're just checking for existence
 
 $(document).ready(function() {
     saverGetter(); 
 
-        $(".searchBtn").on("click", function(event) {
-            event.preventDefault();
-            if ($("#searches").val() == "") {
-                return $(".modal").text("ERROR - you must enter in an artist name.").modal();
-            }
-            const artist = $("#searches").val();
-            saverGetter(artist);
-            liCheck(); //Produce modal with error if empty string
-            //LastFM Call
-            artistCall(artist)
-            
-        })
-
-//Storing info to localStorage and persisting 
-$(".searchBtn").on("click", function() {
-    $('input[type="text"]').each(function() {
-        const id = $(this).attr('id');
-        const value = $(this).val();
-        localStorage.setItem(id, JSON.stringify(value));
-        
-    });
-    
-});
+$(".searchBtn").on("click", function(event) {
+    event.preventDefault();
+    if ($("#searches").val() == "") {
+        return $(".modal").text("ERROR - you must enter in an artist name.").modal();
+    }
+    const artist = $("#searches").val();
+    saverGetter();
+    liCheck(); //Produce modal with error if empty string
+    //LastFM Call
+    artistCall(artist) 
+})
 
 })
-const liMaker = $("<li>"); //Making the li GLOBALLY
 function saverGetter() {
     const value = $("#searches").val(); //Grab the val of our search input
-     if (!searchArray.includes(value) && value != "") { //Prevents multiples of same artist & prevents displaying empty <li>
+     if (!searchArray.includes(value) && value !== "") { //Prevents multiples of same artist & prevents displaying empty <li>
          searchArray.push(value);  //Push the value as long as it meets these requirements
          localStorage.setItem('search', JSON.stringify(searchArray));  //Save the pushed values into the array and save THAT into localStorage
-     }    another();
-     }
+     }    
+     another();
+}
 function liCheck () { //This function says that if there's an empty string, it'll produce a modal w/error
     if ($("#searches").val() == "") {
         return $(".modal").text("ERROR - you must enter in an artist name.").modal();
     }
 }
 function another() {
-             $(".mostRecent").empty(); //When we append, we add things to the page. So we need to empty things out BEFORE we do all of that since we're adding more things.
-             for (let i = 0; i < 3; i++) { 
-                 if (i > searchArray.length - 1) { //Ensures we don't have empty list items. Gets last position in array, and when you get PAST that last position...
-                     break; //Break!
-                 }
-                 $(".recentList").append(liMaker); //Append to recentList
-                 liMaker.addClass(".mostRecent"); //Add the class of mostRecent EVERYTIME to liMaker (<li>)
-                 liMaker.text(JSON.parse(localStorage.getItem('search'))[i]); //Add the text of the saved localStorage array to liMaker
-                 
-}}
+    $(".recentList").empty(); //Must clear what we append to
+    for (let i = 0; i < 3; i++) { 
+        if (i > searchArray.length - 1) { //Ensures we don't have empty list items. Gets last position in array, and when you get PAST that last position...
+            break; //Break!
+        }
+        const liMaker = $("<li>"); //Making the li GLOBALLY
+        liMaker.addClass(".mostRecent"); //Add the class of mostRecent EVERYTIME to liMaker (<li>)
+        liMaker.text(searchArray[i]); //Add the text of the saved localStorage array to liMaker
+        $(".recentList").append(liMaker);
+    }
+}
 
 $(".similarCard").on("click", ".sim", function() {
     let artist = $(this).text();
