@@ -64,6 +64,8 @@ function artistCall(artist) {
             $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
             $(".artistName").append(response.artist.name);
             $(".artistName").prepend("<img class='hb' src='hamburgerIconSm.JPG'>")
+            $(".similarCard").append("<div class=" + "'directions'>Click on an Artisit to get information</div>")
+            $(".similarCard").append("<br>")
             for (let i = 0; i < response.artist.similar.artist.length; i++) {
                 $(".similarCard").append("<div class=" + "'sim'>" + response.artist.similar.artist[i].name + "</div>")
             }
