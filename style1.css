@@ -165,3 +165,8 @@ width: auto;
   z-index: 0;
 }
 
+.smallRecord {
+  width: 30px;
+  max-width: 30px;
+  height: auto;
+}
