@@ -4,7 +4,6 @@ let searchArray = JSON.parse(localStorage.getItem('search')) || [];  //No need f
 
 $(document).ready(function() {
     saverGetter(); 
-
 $(".searchBtn").on("click", function(event) {
     event.preventDefault();
     if ($("#searches").val() == "") {
@@ -59,6 +58,7 @@ function artistCall(artist) {
             let bio = response.artist.bio.summary;
             $(".bioCard").empty();
             $(".similarCard").empty();
+            $(".eventCard").empty();
             $(".videoCard").empty();
             $(".artistName").empty();
             $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
@@ -99,9 +99,11 @@ function artistCall(artist) {
                 url: eventURL,
                 method: "GET"
             }).then(function(response) {
-                $(".bioCard").append("<div>" + "<p>Upcoming Events: " + "</p>" + "</div>");
+                
                 for (let i = 0; i < 10; i++) {
-                    $(".bioCard").append("<a" + " href='" + response[i].url + "'" + "target=" + "_blank" + "" + '>' + response[i].datetime + ", " + response[i].venue.name + ", " + response[i].venue.city + "</a>");
+                    let splitDate = response[i].datetime;       
+                    $(".eventCard").append("<a" + " href='" + response[i].url + "'" + "target=" + "_blank" + "" + '>' + "<li>" + splitDate.slice(0,10) + ": " + response[i].venue.name + ", " + response[i].venue.city + "</li>" + "</a>");
+                    //In the above append, we're slicing the splitDate const to remove the THour information -- the THour information starts at the index number of 10, so we need to do a .slice starting at index 0 and ending at index 10 in order to get the date, but NOT the time. 
                 }
 
             })
