@@ -6,8 +6,9 @@ body {
 }
 .navbar-style {
 background-image: url(woodbackground.jpeg);
-background-color: #3f2917;
+background-color: #000000;
 }
+
 .title {
 font-family: 'Comfortaa', cursive;
 color: white;
@@ -15,16 +16,19 @@ font-size: 30px;
 font-weight: bold;
 padding-top: 5px;
 }
+
 .searchbar-style {
 width: 200px;
 margin: -50;
 }
+
 .searchTitle {
   font-weight: bold;
 }
 
 .searchTitle {
     font-weight: bold;
+    font-family: 'Comfortaa', cursive;
 }
 
 .searchBtn {
@@ -95,23 +99,6 @@ margin: 20px;
   text-decoration: none;
 }
 
-.recordImage {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  max-width: 100px;
-  opacity: 0.3;
-  filter: alpha(opacity=30);
-  z-index: 0;
-}
-
-.searchInstructions {
-  font-family: 'Comfortaa', cursive;
-  font-size: 18px;
-  position: relative;
-  z-index: 10;
-}
-
 .modal {
   height: 100px;
   width: 100px;
@@ -139,4 +126,47 @@ margin: 20px;
 
 .toggle-style {
   color: transparent;
+}
+
+.searchForm {
+width: 1000px;
+
+}
+
+.btnDiv {
+  float: left;
+}
+
+.instructions {
+background-color: #000000b7;
+color: white;
+margin: 5px; 
+margin-bottom: -5px;
+padding: 30px;
+height: 100px;
+width: auto;
+}
+
+.searchInstructions {
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px;
+  position: relative;
+  z-index: 10;
+}
+
+
+.recordImage {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  z-index: 0;
+}
+
+.smallRecord {
+  width: 30px;
+  max-width: 30px;
+  height: auto;
 }
