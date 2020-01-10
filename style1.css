@@ -65,7 +65,7 @@ margin-right:auto;
 margin-left: auto;
 top: 200px;
 width: 100%;
-max-width: 1000px;
+max-width: 1300px;
 height: auto;
 opacity: 0.3;
 filter: alpha(opacity=30);
@@ -139,4 +139,9 @@ margin: 20px;
 
 .toggle-style {
   color: transparent;
+}
+
+.smallRecord {
+  width: 30px;
+  height: 30px;
 }
