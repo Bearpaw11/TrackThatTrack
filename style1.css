@@ -1,25 +1,25 @@
 * {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 body {
   background-image: url(woodbackground.jpeg);
 }
 .navbar-style {
-background-image: url(woodbackground.jpeg);
-background-color: #000000;
+  background-image: url(woodbackground.jpeg);
+  background-color: #000000;
 }
 
 .title {
-font-family: 'Comfortaa', cursive;
-color: white;
-font-size: 30px;
-font-weight: bold;
-padding-top: 5px;
+  font-family: "Comfortaa", cursive;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 5px;
 }
 
 .searchbar-style {
-width: 200px;
-margin: -50;
+  width: 200px;
+  margin: -50;
 }
 
 .searchTitle {
@@ -27,8 +27,8 @@ margin: -50;
 }
 
 .searchTitle {
-    font-weight: bold;
-    font-family: 'Comfortaa', cursive;
+  font-weight: bold;
+  font-family: "Comfortaa", cursive;
 }
 
 .searchBtn {
@@ -36,23 +36,26 @@ margin: -50;
   color: #5d3d23;
 }
 .searchBtn:hover {
-background-color: #5d3d23 ;
+  background-color: #5d3d23;
 }
 .card {
-background-color: #000000b7;
-color: white;
-margin: 5px;
+  background-color: #000000b7;
+  color: white;
+  margin: 5px;
 }
 .card-group {
-margin-top: 15px;
+  margin-top: 15px;
 }
 .hamburger-style {
-color: white;
-/* border: solid 2px; */
-background-image: url("searchIcon.svg");
+  color: white;
+  /* border: solid 2px; */
+  background-image: url("searchIcon.svg");
 }
 
-.hamburger-style:hover, .hamburger-style:focus, .hamburger-style:link, .hamburger-style:active {
+.hamburger-style:hover,
+.hamburger-style:focus,
+.hamburger-style:link,
+.hamburger-style:active {
   text-decoration: none;
 }
 
@@ -63,28 +66,29 @@ background-image: url("searchIcon.svg");
   border-radius: 25px;
 }
 .tttPic {
-position: absolute;
-z-index: -1;
-margin-right:auto;
-margin-left: auto;
-top: 200px;
-width: 100%;
-max-width: 1000px;
-height: auto;
-opacity: 0.3;
-filter: alpha(opacity=30);
+  position: absolute;
+  z-index: -1;
+  margin-right: auto;
+  margin-left: auto;
+  top: 200px;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
 }
 
 .artistPic {
-width: 100%;
-height: auto;
-max-width: 400px;
-padding: 30px;
-margin: 20px;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  padding: 30px;
+  margin: 20px;
 }
 
-.card-title, .artistName {
-  font-family: 'Comfortaa', cursive;
+.card-title,
+.artistName {
+  font-family: "Comfortaa", cursive;
   color: white;
   padding-top: 5px;
 }
@@ -94,8 +98,10 @@ margin: 20px;
   color: #b38f63;
 }
 
-
-.btn:hover, .btn:active, .btn:link, .btn:focus {
+.btn:hover,
+.btn:active,
+.btn:link,
+.btn:focus {
   text-decoration: none;
 }
 
@@ -110,7 +116,9 @@ margin: 20px;
   border-color: #b1301a;
 }
 
-.card-header:hover, .card-header:active, .card-header:focus {
+.card-header:hover,
+.card-header:active,
+.card-header:focus {
   background-image: linear-gradient(to right, #000000, #1d150d, #b1301a);
   color: #b38f63;
 }
@@ -129,8 +137,7 @@ margin: 20px;
 }
 
 .searchForm {
-width: 1000px;
-
+  width: 1000px;
 }
 
 .btnDiv {
@@ -138,22 +145,21 @@ width: 1000px;
 }
 
 .instructions {
-background-color: #000000b7;
-color: white;
-margin: 5px; 
-margin-bottom: -5px;
-padding: 30px;
-height: 100px;
-width: auto;
+  background-color: #000000b7;
+  color: white;
+  margin: 5px;
+  margin-bottom: -5px;
+  padding: 30px;
+  height: 100px;
+  width: auto;
 }
 
 .searchInstructions {
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   font-size: 18px;
   position: relative;
   z-index: 10;
 }
-
 
 .recordImage {
   position: absolute;
