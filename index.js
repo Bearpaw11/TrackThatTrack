@@ -1,5 +1,7 @@
 const lastFmKey = "d3085bfaa5ede08f67f9926f412ffa08";
 const bitKey = "a9c5d877eaa4fd5368776229d482016f";
+let searchArray = []; 
+
 $(document).ready(function() {
 
         $(".searchBtn").on("click", function(event) {
@@ -15,6 +17,7 @@ $(document).ready(function() {
         })
     //Storing info to localStorage and persisting
 
+//Storing info to localStorage and persisting 
 $(".searchBtn").on("click", function() {
     $('input[type="text"]').each(function() {
         const id = $(this).attr('id');
