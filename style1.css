@@ -176,3 +176,7 @@ body {
   max-width: 30px;
   height: auto;
 }
+
+.sim:hover {
+  color: #b1301a;
+}
