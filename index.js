@@ -47,14 +47,11 @@ function another() {
 
 $(".similarCard").on("click", ".sim", function() {
     let artist = $(this).text();
-    console.log(artist)
     artistCall(artist)
 });
 
 $(".recentList").on("click", ".mostRecent", function() {
-    console.log("working")
     let artist = $(this).text();
-    console.log(artist)
     artistCall(artist)
     
 });
