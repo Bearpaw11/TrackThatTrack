@@ -37,15 +37,26 @@ function another() {
             break; //Break!
         }
         const liMaker = $("<li>"); //Making the li GLOBALLY
-        liMaker.addClass(".mostRecent"); //Add the class of mostRecent EVERYTIME to liMaker (<li>)
+        liMaker.addClass("mostRecent"); //Add the class of mostRecent EVERYTIME to liMaker (<li>)
         liMaker.text(searchArray[i]); //Add the text of the saved localStorage array to liMaker
         $(".recentList").append(liMaker);
+
+        
     }
 }
 
 $(".similarCard").on("click", ".sim", function() {
     let artist = $(this).text();
+    console.log(artist)
     artistCall(artist)
+});
+
+$(".recentList").on("click", ".mostRecent", function() {
+    console.log("working")
+    let artist = $(this).text();
+    console.log(artist)
+    artistCall(artist)
+    
 });
 
 function artistCall(artist) {
