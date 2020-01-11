@@ -4,6 +4,8 @@ let searchArray = JSON.parse(localStorage.getItem('search')) || [];  //No need f
 
 $(document).ready(function() {
     saverGetter(); 
+    $('selector').css({'cursor': 'url(TrackThat.png), default'});
+
 $(".searchBtn").on("click", function(event) {
     event.preventDefault();
     if ($("#searches").val() == "") {
@@ -37,7 +39,7 @@ function another() {
             break; //Break!
         }
         const liMaker = $("<li>"); //Making the li GLOBALLY
-        liMaker.addClass(".mostRecent"); //Add the class of mostRecent EVERYTIME to liMaker (<li>)
+        liMaker.addClass("mostRecent"); //Add the class of mostRecent EVERYTIME to liMaker (<li>)
         liMaker.text(searchArray[i]); //Add the text of the saved localStorage array to liMaker
         $(".recentList").append(liMaker);
     }
@@ -107,5 +109,5 @@ function artistCall(artist) {
                 }
 
             })
-            
+
     }
