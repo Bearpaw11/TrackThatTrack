@@ -189,3 +189,7 @@ body {
 .wrapper {
   display: inline-block;
 }
+
+.sim:hover {
+  color: #b1301a;
+}
