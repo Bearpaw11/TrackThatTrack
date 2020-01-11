@@ -72,6 +72,7 @@ function artistCall(artist) {
             $(".eventCard").empty();
             $(".videoCard").empty();
             $(".artistName").empty();
+            $(".instructions").empty();
             $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
             $(".artistName").append(response.artist.name);
             $(".artistName").prepend("<img class='hb' src='hamburgerIconSmb.JPG'>")
