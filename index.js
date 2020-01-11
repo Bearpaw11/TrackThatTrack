@@ -64,7 +64,7 @@ function artistCall(artist) {
             $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
             $(".artistName").append(response.artist.name);
             $(".artistName").prepend("<img class='hb' src='hamburgerIconSmb.JPG'>")
-            $(".similarCard").append("<div class=" + "'directions'>Click on an Artisit to get information</div>")
+            $(".similarCard").append("<div class=" + "'directions'>Click on an artist name to get more information</div>")
             $(".similarCard").append("<br>")
             for (let i = 0; i < response.artist.similar.artist.length; i++) {
                 $(".similarCard").append("<div class=" + "'sim'>" + response.artist.similar.artist[i].name + "</div>")
@@ -80,11 +80,12 @@ function artistCall(artist) {
         const eventURL = "https://rest.bandsintown.com/artists/" + artist + "/events/?app_id=a9c5d877eaa4fd5368776229d482016f";
 
         //BandsInTown Call
-        $.ajax({ //PHOTO ONLY
+        $.ajax({ //PHOTO + FB ONLY
             url: bitURL,
             method: "GET"
         }).then(function(response) {
             $(".videoCard").append("<div>" + "<img class='artistPic' src='" + response.image_url + "'>" + "</div>");
+            $(".videoCard").append("<a" + " href='" + response.facebook_page_url + "' " + "target=" + "_blank" + "'" + ">" + "<img src='fb.png' height='30px' width='30px'>" + "</a>" + "<a" + " href='" + response.url + "' " + "target=" + "_blank" + "'" + ">" + "       <img src='bit.png' height='30px' width='30px'>" + "</a>");
         })
 
         $.ajax({ //Only for getting the BIN link. Link opens in New window
@@ -92,7 +93,6 @@ function artistCall(artist) {
             method: "GET"
         }).then(function(response) {
             $(".videoCard").append("<br>")
-            $(".videoCard").append("<a" + " href='" + response.url + "' " + "target=" + "_blank" + "'" + ">LINK TO BANDS IN TOWN PAGE</a>")
         })
 
         $.ajax({ //Only for getting events
