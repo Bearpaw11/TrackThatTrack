@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 ​
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,124 +16,128 @@
   <link rel="stylesheet" href="style1.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"></script>
 </head>
+
 <body> ​
   <img class="tttPic" src="TrackThat.png">
   <div class="pos-f-t">
     <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-dark p-4 navbar-style">
-        ​
+      <div class="bg-dark p-4 navbar-style"> ​
         <h5 class="text-white h4 searchTitle">Search your favorite artist:</h5>
         <div class="input-group mb-3 inputGroup">
+          <div class="wrapper">
+    
           <form class="searchForm">
-            <input type="search" class="form-control" id="searches" placeholder="Search Artist Name"
-              aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="search" class="form-control" id="searches" placeholder="Search Artist Name" aria-label="search"
+              aria-describedby="button-addon2">
             <div class="input-group-append btnDiv">
               <button class="btn btn-outline-secondary searchBtn" type="submit" id="button-addon2">Search</button>
           </form>
-          <div class="modal">
           </div>
         </div>
-        <ul class="recentList"></ul>
+        <div class="recentSearchBox">
+          <ul class="recentList"></ul>
+        </div>
       </div> ​
     </div>
   </div>
-      <nav class="navbar navbar-dark bg-dark navbar-style">
-        <button class="navbar-toggler toggle-style" type="button" data-toggle="collapse"
-          data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="hamburger-style"><img class="searchIcon" src="searchIcon.png"></span>
-        </button>
-        <p class="title"><img class="smallRecord" src="vinylRecord.png">Track That Track <img class="smallRecord"
-            src="vinylRecord.png"></p>
-      </nav>
+  <div class="modal">
+  </div>
+  <nav class="navbar navbar-dark bg-dark navbar-style">
+    <button class="navbar-toggler toggle-style" type="button" data-toggle="collapse"
+      data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="hamburger-style"><img class="searchIcon" src="searchIcon.png"></span>
+    </button>
+    <p class="title"><img class="smallRecord" src="vinylRecord.png">Track That Track <img class="smallRecord"
+        src="vinylRecord.png"></p>
+  </nav>
+  </div>
+  <div class="instructions">
+    <img class="recordImage" src="vinylRecord.png">
+    <p class="searchInstructions"> Search for an artist by clicking the <img class="searchIcon" src="searchIcon.png">
+      above.</p>
+  </div>
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="false" aria-controls="collapseOne">
+            <h5 class="card-title artistName">
+              <img src="hamburgerIconSmb.JPG"><span class="cardHeader">Artist</span></h5>
+          </button>
+      </div>
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body videoCard">
+        </div>
+      </div>
     </div>
-    <div class="instructions">
-      <img class="recordImage" src="vinylRecord.png">
-      <p class="searchInstructions"> Search for an artist by clicking the <img class="searchIcon" src="searchIcon.png">
-        above.</p>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <h5 class="card-title">
+              <img src="hamburgerIconSmb.JPG"><span class="cardHeader">Bio</span>
+            </h5>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body bioCard">
+        </div>
+      </div>
     </div>
-    <div class="accordion" id="accordionExample">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h2 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-              aria-expanded="false" aria-controls="collapseOne">
-              <h5 class="card-title artistName">
-                <img src="hamburgerIconSmb.JPG"><span class="cardHeader">Artist</span></h5>
-            </button>
-        </div>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body videoCard">
-          </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0 cardHeader-style">
+          <button class="btn btn-link collapsed show" type="button" data-toggle="collapse" data-target="#collapseThree"
+            aria-expanded="false" aria-controls="collapseThree">
+            <h5 class="card-title">
+              <img src="hamburgerIconSmb.JPG">
+              <span class="cardHeader">Upcoming Events</span>
+            </h5>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body eventCard">
         </div>
       </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-              aria-expanded="true" aria-controls="collapseTwo">
-              <h5 class="card-title">
-                <img src="hamburgerIconSmb.JPG"><span class="cardHeader">Bio</span>
-              </h5>
-            </button>
-          </h2>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-          <div class="card-body bioCard">
-          </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <h2 class="mb-0 cardHeader-style">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+            aria-expanded="false" aria-controls="collapseFour">
+            <h5 class="card-title">
+              <img src="hamburgerIconSmb.JPG">
+              <span class="cardHeader">Similar Artists</span>
+            </h5>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body similarCard">
         </div>
       </div>
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h2 class="mb-0 cardHeader-style">
-            <button class="btn btn-link collapsed show" type="button" data-toggle="collapse"
-              data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <h5 class="card-title">
-                <img src="hamburgerIconSmb.JPG">
-                <span class="cardHeader">Upcoming Events</span>
-              </h5>
-            </button>
-          </h2>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-          <div class="card-body eventCard">
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingFour">
-          <h2 class="mb-0 cardHeader-style">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
-              aria-expanded="false" aria-controls="collapseFour">
-              <h5 class="card-title">
-                <img src="hamburgerIconSmb.JPG">
-                <span class="cardHeader">Similar Artists</span>
-              </h5>
-            </button>
-          </h2>
-        </div>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-          <div class="card-body similarCard">
-            
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
-<script type="text/javascript" src="index.js"></script>
+    </div>
+  </div>
+  <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+  <script type="text/javascript" src="index.js"></script>
 </body>
 ​
 

@@ -34,6 +34,7 @@ body {
 .searchBtn {
   background-color: white;
   color: #5d3d23;
+  
 }
 .searchBtn:hover {
   background-color: #5d3d23;
@@ -112,7 +113,7 @@ body {
 
 .card-header {
   background-color: #000000;
-  border-bottom: 1px solid;
+  border: 1px solid;
   border-color: #b1301a;
 }
 
@@ -137,12 +138,9 @@ body {
 }
 
 .searchForm {
-  width: 1000px;
+  width: 800px;
 }
 
-.btnDiv {
-  float: left;
-}
 
 .instructions {
   background-color: #000000b7;
@@ -177,6 +175,17 @@ body {
   height: auto;
 }
 
-.sim:hover {
-  color: #b1301a;
+.recentSearchBox {
+  width: 1000px;
+  height: auto;
+  margin: 15px;
+  padding: 5px;
+}
+
+.inputGroup {
+  width: 1500px;
+}
+
+.wrapper {
+  display: inline-block;
 }
