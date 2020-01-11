@@ -1,6 +1,10 @@
 # TrackThatTrack
 
-Track That Track (c) is a Desktop user-friendly music app, created by Christopher Behrens, Melanie Rogoff, Shauna McGrail, and Linzy Gilbreath.
+Track That Track (c) is a Desktop user-friendly music app, created by:
+ * Christopher Behrens
+ * Melanie Rogoff
+ * Shauna McGrail
+ * Linzy Gilbreath.
 
 This app was made for music lovers that are looking to learn more about bands/artists of their choosing. This app allows users (upon entering an artist name and clicking “search”) to find the following:
 
