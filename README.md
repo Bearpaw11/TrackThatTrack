@@ -20,5 +20,11 @@ Track That Track (c) Value Proposition:
 
 The link to Track That Track (c) is: https://bearpaw11.github.io/TrackThatTrack/
 
-Screenshots: 
+Screenshots (Desktop Views): 
 
+![Desktop Demo 1](Screenshots/demo1.png)
+![Desktop Demo 2](Screenshots/demo2.png)
+![Desktop Demo Bio](Screenshots/demobio.png)
+![Desktop Demo Events](Screenshots/demoevents.png)
+![Desktop Demo Similar Artists](Screenshots/demosim.png)
+![Desktop Demo Next Artist](Screenshots/jjdemo.png)
