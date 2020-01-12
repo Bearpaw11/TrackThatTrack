@@ -93,7 +93,9 @@ body {
   padding: 30px;
   margin: 20px;
 }
-
+.form-control{
+  width:150%;
+}
 .card-title,
 .artistName {
   font-family: "Comfortaa", cursive;
