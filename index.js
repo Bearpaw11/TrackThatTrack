@@ -4,6 +4,8 @@ let searchArray = JSON.parse(localStorage.getItem('search')) || [];  //No need f
 
 $(document).ready(function() {
     saverGetter(); 
+    $('selector').css({'cursor': 'url(TrackThat.png), default'});
+
 $(".searchBtn").on("click", function(event) {
     event.preventDefault();
     if ($("#searches").val() == "") {
@@ -116,5 +118,5 @@ function artistCall(artist) {
                 }
 
             })
-            
+
     }
