@@ -66,6 +66,12 @@ body {
   background-color: #000000b7;
   border-radius: 25px;
 }
+
+.mostRecent:hover, .mostRecent:active, .mostRecent:focus {
+  color: #b1301a;
+  cursor: pointer;
+}
+
 .tttPic {
   position: absolute;
   z-index: -1;
@@ -137,11 +143,6 @@ body {
   color: transparent;
 }
 
-.searchForm {
-  width: 800px;
-}
-
-
 .instructions {
   background-color: #000000b7;
   color: white;
@@ -176,16 +177,10 @@ body {
 }
 
 .recentSearchBox {
-  width: 1000px;
+  width: 100%;
   height: auto;
   margin: 15px;
   padding: 5px;
 }
 
-.inputGroup {
-  width: 1500px;
-}
 
-.wrapper {
-  display: inline-block;
-}
