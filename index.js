@@ -22,7 +22,7 @@ $(".searchBtn").on("click", function(event) {
 function saverGetter() {
     const value = $("#searches").val(); //Grab the val of our search input
      if (!searchArray.includes(value) && value !== "") { //Prevents multiples of same artist & prevents displaying empty <li>
-         searchArray.push(value);  //Push the value as long as it meets these requirements
+         searchArray.unshift(value);  //Push the value as long as it meets these requirements
          localStorage.setItem('search', JSON.stringify(searchArray));  //Save the pushed values into the array and save THAT into localStorage
      }    
      another();
