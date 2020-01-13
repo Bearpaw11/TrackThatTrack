@@ -72,6 +72,14 @@ function artistCall(artist) {
             $(".videoCard").empty();
             $(".artistName").empty();
             $(".instructions").remove();
+            $("#collapseOne").removeClass("collapse");
+            $("#collapseOne").addClass("collapsed");
+            $("#navGlass").addClass("collapsed");
+            $("#navGlass").removeAttr("aria-expanded","true");
+            $("#navGlass").attr("aria-expanded","false");
+            $("#navbarToggleExernalContent").removeClass("show");
+            
+
             $(".bioCard").append("<div>" + "<p>" + bio + "</p>" + "</div>");
             $(".artistName").append(response.artist.name);
             $(".artistName").prepend("<img class='hb' src='hamburgerIconSmb.JPG'>")
