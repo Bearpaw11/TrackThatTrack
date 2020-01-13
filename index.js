@@ -4,7 +4,6 @@ let searchArray = JSON.parse(localStorage.getItem('search')) || [];  //No need f
 
 $(document).ready(function() {
     saverGetter(); 
-    $('selector').css({'cursor': 'url(TrackThat.png), default'});
 
 $(".searchBtn").on("click", function(event) {
     event.preventDefault();
@@ -22,12 +21,12 @@ $(".searchBtn").on("click", function(event) {
 function saverGetter() {
     const value = $("#searches").val(); //Grab the val of our search input
      if (!searchArray.includes(value) && value !== "") { //Prevents multiples of same artist & prevents displaying empty <li>
-         searchArray.unshift(value);  //Push the value as long as it meets these requirements
-         localStorage.setItem('search', JSON.stringify(searchArray));  //Save the pushed values into the array and save THAT into localStorage
+         searchArray.unshift(value);  //Unshift and push add values to arrays - we're doing unshift instead of push here BECAUSE doing unshift HERE will ensure that the first recently searched item will be replaced by the newest search. There will still be a maximum of three <li>s due to the for loop later in the code that uses searchArray.
+         localStorage.setItem('search', JSON.stringify(searchArray));  //Save pushed values into the array and save THAT into localStorage
      }    
      another();
 }
-function liCheck () { //This function says that if there's an empty string, it'll produce a modal w/error
+function liCheck () { //If there's an empty string, produce modal w/error
     if ($("#searches").val() == "") {
         return $(".modal").text("ERROR - you must enter in an artist name.").modal();
     }
@@ -38,13 +37,11 @@ function another() {
         if (i > searchArray.length - 1) { //Ensures we don't have empty list items. Gets last position in array, and when you get PAST that last position...
             break; //Break!
         }
-        const liMaker = $("<li>"); //Making the li GLOBALLY
-        liMaker.addClass("mostRecent"); //Add the class of mostRecent EVERYTIME to liMaker (<li>)
-        liMaker.text(searchArray[i]); //Add the text of the saved localStorage array to liMaker
-        $(".recentList").append(liMaker);
-
-        
-    }
+        const liMaker = $("<li>"); //Making li first
+        liMaker.addClass("mostRecent"); //Add class of mostRecent EVERYTIME to liMaker (<li>)
+        liMaker.text(searchArray[i]); //Add text of saved localStorage array to liMaker 
+        $(".recentList").append(liMaker); //Append liMaker to recentList    
+    }     
 }
 
 $(".similarCard").on("click", ".sim", function() {
